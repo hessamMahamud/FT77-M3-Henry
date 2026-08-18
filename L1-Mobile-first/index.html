@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Chat con tu personaje favorito</title>
+  </head>
+  <body>
+    <div class="chatApp">
+      <header class="chatHeader">
+        <h1 class="chatHeader__title">Chat</h1>
+        <p class="chatHeader__subtitle">Con tu personaje favorito</p>
+      </header>
+
+      <main class="chatMessages" aria-label="Mensajes">
+        <div class="message message--character">Hola, ¿en qué te puedo ayudar hoy?</div>
+        <div class="message message--user">Quiero practicar diseño responsive.</div>
+        <div class="message message--character">Perfecto. Empecemos por mobile-first.</div>
+        <div class="message message--user">¿Por qué mobile-first?</div>
+        <div class="message message--character">
+          Porque las pantallas chicas son el caso más restrictivo. Si funciona ahí, escalar es
+          fácil.
+        </div>
+        <div class="message message--user">¿Y el viewport?</div>
+        <div class="message message--character">
+          El meta viewport le dice al navegador móvil que use el ancho real del dispositivo.
+        </div>
+        <div class="message message--user">¿Flexbox o Grid?</div>
+        <div class="message message--character">
+          Flexbox para una dimensión (como este chat). Grid para dos dimensiones.
+        </div>
+        <div class="message message--user">¿Cuándo usar rem y cuándo px?</div>
+        <div class="message message--character">
+          Rem para spacing y tipografía. Px solo para bordes finos y sombras.
+        </div>
+        <div class="message message--user">Buenísimo, gracias.</div>
+        <div class="message message--character">Cuando quieras.</div>
+      </main>
+
+      <form class="chatComposer">
+        <input
+          class="chatComposer__input"
+          type="text"
+          placeholder="Escribe un mensaje…"
+          aria-label="Escribe tu mensaje" />
+        <button class="chatComposer__send" type="submit">Enviar</button>
+      </form>
+    </div>
+  </body>
+</html>
