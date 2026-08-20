@@ -1,0 +1,311 @@
+/* ========================================
+   0. Navegación principal (nuevo en L2)
+   ======================================== */
+.mainNav {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: #111827;
+  border-bottom: 1px solid #1f2937;
+}
+
+.mainNav__link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  transition: background 0.15s;
+}
+
+.mainNav__link:hover {
+  background: #1f2937;
+}
+
+/* ========================================
+   1. Reset minimo
+   ======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; /* base para que rem funcione predecible */
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  font-size: 1rem; /* 16px legible en mobile */
+  line-height: 1.5;
+  color: #111827;
+  background: #f9fafb;
+}
+
+/* ========================================
+   2. Layout principal del chat (mobile-first)
+   ======================================== */
+
+.chatApp {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #ffffff;
+}
+
+.chatHeader {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.chatHeader__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.chatHeader__subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.chatMessages {
+  flex: 1;
+  overflow: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overscroll-behavior-y: contain;
+}
+
+.chatComposer {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+/* ========================================
+   3. Mensajes (burbujas)
+   ======================================== */
+
+.message {
+  max-width: 85%;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  word-wrap: break-word;
+}
+
+.message--character {
+  align-self: flex-start; /* burbuja a la izquierda */
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+.message--user {
+  align-self: flex-end; /* burbuja a la derecha */
+  background: #111827;
+  color: #ffffff;
+}
+
+/* ========================================
+   4. Composer (input + boton)
+   ======================================== */
+
+.chatComposer__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  outline: none;
+}
+
+.chatComposer__input:focus {
+  border-color: #111827;
+}
+
+.chatComposer__send {
+  padding: 0.75rem 1.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: #111827;
+  border: 0;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  white-space: nowrap; /* "Enviar" no se parte en 2 lineas */
+}
+
+.chatComposer__send:hover {
+  background: #374151;
+}
+
+/* ========================================
+   5. Tablet: 768px en adelante
+   ======================================== */
+
+@media (min-width: 768px) {
+  .chatHeader {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .chatMessages {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .chatComposer {
+    padding: 1rem 1.5rem;
+  }
+
+  .message {
+    max-width: 75%; /* burbujas mas estrechas */
+  }
+}
+
+/* ========================================
+   6. Desktop: 1024px en adelante
+   ======================================== */
+
+@media (min-width: 1024px) {
+  body {
+    background: #f3f4f6; /* fondo gris para que se vea el contenedor */
+  }
+
+  .chatApp {
+    max-width: 64rem; /* limita ancho ~ 1024px */
+    margin: 0 auto; /* centra horizontalmente */
+    border-left: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+  }
+
+  .chatHeader {
+    padding: 1.5rem 2rem;
+  }
+
+  .chatMessages {
+    padding: 2rem;
+  }
+
+  .chatComposer {
+    padding: 1.5rem 2rem;
+  }
+
+  .message {
+    max-width: 60%; /* burbujas mas estrechas en desktop */
+  }
+}
+
+/* ========================================
+   7. Vistas Home / About / NotFound
+   ======================================== */
+
+.view {
+  padding: 2rem 1rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.view h1 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.view p {
+  margin-bottom: 1rem;
+  color: #4b5563;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.btn--primary {
+  color: #ffffff;
+  background: #111827;
+  border: 0;
+}
+
+.btn--primary:hover {
+  background: #374151;
+}
+
+/* ========================================
+   8. Estados del chat (nuevo en L3)
+   ======================================== */
+
+/* Burbuja "escribiendo..." con animacion sutil. */
+.message--typing {
+  font-style: italic;
+  opacity: 0.7;
+  animation: typing-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes typing-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+/* Burbuja roja para el estado de error. */
+.message--error {
+  align-self: center;
+  max-width: 90%;
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Composer deshabilitado mientras carga. */
+.chatComposer__input:disabled,
+.chatComposer__send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.message__retry {
+  display: block;
+  margin: 0.5rem auto 0;
+  padding: 0.25rem 0.75rem;
+  background: #b91c1c;
+  color: white;
+  border: 0;
+  border-radius: 0.25rem;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.message__retry:hover {
+  background: #991b1b;
+}
