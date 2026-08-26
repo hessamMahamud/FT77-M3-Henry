@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Playground Fetch</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <main class="playground">
+      <h1>Buscador de To-dos</h1>
+
+      <form id="searchForm">
+        <input id="searchInput" type="number" min="1" placeholder="ID (1-200)" required />
+        <button type="submit">Buscar</button>
+      </form>
+
+      <!-- Slot único donde el render mete cada estado -->
+      <section id="result" aria-live="polite"></section>
+    </main>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f9fafb;
+  padding: 2rem 1rem;
+}
+
+.playground {
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+}
+
+#searchForm {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#searchInput {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font: inherit;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background: #111827;
+  color: white;
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+#result {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  min-height: 4rem;
+}
+
+.state--loading {
+  color: #6b7280;
+}
+
+.state--error {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.state--success {
+  color: #065f46;
+}
